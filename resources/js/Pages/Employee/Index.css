@@ -1,0 +1,136 @@
+/* สไตล์ของ Container */
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* สไตล์ของ Title */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333; /* เปลี่ยนเป็นสีดำ */
+    text-align: center;
+}
+
+/* สไตล์ของฟอร์มค้นหา */
+.search-form {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* สไตล์ของช่องค้นหา */
+.search-input {
+    border: 1px solid #ccc; /* กรอบสีเทาอ่อน */
+    border-radius: 4px;
+    padding: 10px;
+    flex: 1;
+    min-width: 200px;
+    background-color: #f9f9f9; /* สีเทาอ่อน */
+}
+
+/* สไตล์ของปุ่มค้นหาและปุ่มรีเฟรช */
+.search-button, .refresh-button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: #fff;
+}
+
+/* สไตล์ของปุ่มค้นหา */
+.search-button {
+    background-color: #333; /* สีดำ */
+}
+
+/* สไตล์ของปุ่มรีเฟรช */
+.refresh-button {
+    background-color: #555; /* สีเทามืด */
+}
+
+/* สไตล์ของตาราง */
+.table-container {
+    overflow-x: auto;
+}
+
+/* สไตล์ของตารางพนักงาน */
+.employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd; /* กรอบสีเทาอ่อน */
+}
+
+/* สไตล์ของหัวตาราง */
+.employee-table th {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #333; /* พื้นหลังสีดำ */
+    color: #fff; /* ข้อความสีขาว */
+}
+
+/* สไตล์ของเซลล์ในตาราง */
+.employee-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* สไตล์ของแถวที่มีเลขคู่ */
+.even-row {
+    background-color: #f9f9f9; /* สีเทาอ่อน */
+}
+
+/* สไตล์ของแถวที่มีเลขคี่ */
+.odd-row {
+    background-color: #fff; /* สีขาว */
+}
+
+/* สไตล์ของ Pagination */
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* สไตล์ของปุ่ม Pagination */
+.pagination-button {
+    padding: 8px;
+    border-radius: 50%;
+    min-width: 50px;
+    height: 50px;
+    text-align: center;
+    background-color: #f9f9f9; /* พื้นหลังสีเทาอ่อน */
+    color: #333; /* ข้อความสีเทามืด */
+    border: none; /* เอากรอบออก */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+/* สไตล์ของปุ่ม Pagination เมื่อถูกเลือก (active) */
+.pagination-button.active {
+    background-color: #333; /* พื้นหลังสีดำ */
+    color: #fff; /* ข้อความสีขาว */
+}
+
+/* สไตล์ของปุ่ม Pagination เมื่อไม่สามารถคลิกได้ (disabled) */
+.pagination-button:disabled {
+    background-color: #d1c6c6; /* สีเทาอ่อน */
+    cursor: not-allowed;
+}
+
+/* ข้อความเมื่อไม่มีพนักงาน */
+.no-employees {
+    text-align: center;
+    color: rgb(198, 192, 192);
+}
