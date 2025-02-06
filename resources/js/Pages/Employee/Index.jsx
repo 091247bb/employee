@@ -53,7 +53,7 @@ export default function EmployeeIndex({ employees, query, currentPage }) {
       <h1 className="title">Employee List</h1>
 
       {/* ฟอร์มค้นหา */}
-      <form onSubmit={handleSearch} className="search-form mt-4">
+      <form onSubmit={handleSearch} className="search-form">
         <input
           type="text"
           className="search-input"
@@ -111,25 +111,33 @@ export default function EmployeeIndex({ employees, query, currentPage }) {
           </table>
 
           {/* การแบ่งหน้า */}
-          <div className="mt-6 flex items-center justify-center space-x-1">
-            {employees.links.map((link, index) => (
-              <button
-                key={index}
-                onClick={() => handlePagination(link.url)} // เปลี่ยนหน้า
-                disabled={!link.url} // ปิดปุ่มถ้าไม่มี URL
-                className={`rounded-full px-3 py-1 text-sm font-medium transition-all ${link.active ? 'bg-blue-500 text-white shadow-md' : 'bg-gray-200 text-black hover:bg-gray-300'}`}
-              >
-                {/* แปลง HTML Entities และแทนที่คำด้วยลูกศร */}
-                {link.label === 'Previous' ? (
-                  <span>&laquo;</span> // ใช้ลูกศรย้อนกลับ
-                ) : link.label === 'Next' ? (
-                  <span>&raquo;</span> // ใช้ลูกศรไปข้างหน้า
-                ) : (
-                  decodeHtmlEntities(link.label) // ถ้าไม่ใช่ Previous หรือ Next ให้แสดงข้อความปกติ
-                )}
-              </button>
-            ))}
-          </div>
+          <div className="flex justify-between items-center mt-6">
+        <button
+             onClick={() => handlePagination(employees.prev_page_url)} // ไปหน้าก่อนหน้า
+             disabled={!employees.prev_page_url} // ปิดการใช้งานหากไม่มีหน้าก่อนหน้า
+            className={`px-4 py-2 rounded font-medium shadow ${employees.prev_page_url
+                ? 'bg-pink-500 text-white hover:bg-pink-600'
+                : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                }`}
+            aria-label="Previous page"
+        >
+        {`<`} Previous
+        </button>
+            <span className="text-gray-600 font-medium">
+         Page {employees.current_page} of {employees.last_page}
+            </span>
+        <button
+             onClick={() => handlePagination(employees.next_page_url)} // ไปหน้าถัดไป
+            disabled={!employees.next_page_url} // ปิดการใช้งานหากไม่มีหน้าถัดไป
+            className={`px-4 py-2 rounded font-medium shadow ${employees.next_page_url
+                ? 'bg-pink-500 text-white hover:bg-pink-600'
+                : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                }`}
+            aria-label="Next page"
+        >
+            Next {`>`}
+        </button>
+        </div>
         </div>
       ) : (
         <h2 className="no-employees">No employees found.</h2>
